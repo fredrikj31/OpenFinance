@@ -1,0 +1,25 @@
+{
+  "name": "openfinance",
+  "version": "1.0.0",
+  "description": "An opensource finance desktop application",
+  "main": "index.js",
+  "scripts": {
+    "start": "electron ."
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/fredrikj31/OpenFinance.git"
+  },
+  "keywords": [
+    "opensource"
+  ],
+  "author": "fredrikj31",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/fredrikj31/OpenFinance/issues"
+  },
+  "homepage": "https://github.com/fredrikj31/OpenFinance#readme",
+  "devDependencies": {
+    "electron": "^12.0.1"
+  }
+}
