@@ -1,8 +1,10 @@
 const { app, BrowserWindow } = require("electron");
 const path = require("path");
 
+let win;
+
 function createWindow() {
-	const win = new BrowserWindow({
+	win = new BrowserWindow({
 		width: 800,
 		height: 600,
 		webPreferences: {
@@ -10,14 +12,29 @@ function createWindow() {
 		},
 	});
 
-	win.loadFile("./includes/templates/index.html");
+	//Disable resizing Disabled for develop reasons
+	//win.setResizable(false);
+
+	// Set icon of window
+	win.setIcon(path.join(__dirname, 'includes/images/icon.png'));
+
+	//Loads html template
+	win.loadFile(path.join(__dirname, 'includes/templates/login.html'));
+
+	//Setting the window to null, when all windows are closed
+	win.on("closed", () => {
+		win = null;
+	});
 }
 
 app.whenReady().then(() => {
 	createWindow();
 
 	// Import keybindings
-	require("./includes/js/keybindings.js");
+	require(path.join(__dirname, "includes/js/keybindings.js"));
+
+	// Creating Tray
+	require(path.join(__dirname, "includes/js/tray.js"))
 
 	app.on("activate", () => {
 		if (BrowserWindow.getAllWindows().length === 0) {
