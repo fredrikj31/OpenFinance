@@ -26,6 +26,7 @@
     "@popperjs/core": "^2.9.1",
     "bootstrap": "^4.6.0",
     "bootswatch": "^4.6.0",
+    "colorthief": "^2.3.2",
     "jquery": "^3.6.0"
   }
 }
