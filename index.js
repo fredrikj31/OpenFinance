@@ -16,6 +16,9 @@ function createWindow() {
 app.whenReady().then(() => {
 	createWindow();
 
+	// Import keybindings
+	require("./includes/js/keybindings.js");
+
 	app.on("activate", () => {
 		if (BrowserWindow.getAllWindows().length === 0) {
 			createWindow();
