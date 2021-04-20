@@ -1,4 +1,4 @@
-const { desktopCapturer, dialog, Menu, App } = require("electron");
+const { BrowserWindow } = require('@electron/remote');
 const { writeFile } = require("fs");
 
 class Account {
