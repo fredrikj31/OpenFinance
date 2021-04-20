@@ -1,0 +1,15 @@
+{
+	"Updated": "",
+	"Accounts": [
+		{
+			"Email": "test@mail.com",
+			"Username": "JohnDoe123",
+			"Password": "Password in hashed form"
+		},
+		{
+			"Email": "jane@mail.com",
+			"Username": "JaneDoe123",
+			"Password": "Password in hashed form"
+		}
+	]
+}

@@ -10,18 +10,30 @@
 	<link rel="stylesheet" href="../css/style.css">
 </head>
 
-<body class="background">
+<body id="background">
 	<div class="container h-100">
-		<div class="row h-100 justify-content-center align-items-center">
-			<div class="col-sm-4" style="background-color:yellow;">33.33%</div>
-			<div class="col-sm-4" style="background-color:orange;">33.33%</div>
-			<div class="col-sm-4" style="background-color:yellow;">33.33%</div>
+		<div class="row h-100 justify-content-center align-items-center" id="accounts">
+			<div class="col-sm" style="background-color:yellow;">33.33%</div>
+			<div class="col-sm" style="background-color:orange;">33.33%</div>
+			<div class="col-sm" style="background-color:yellow;">33.33%</div>
 		</div>
 	</div>
 
+	<!-- Libraries -->
 	<script src="../../node_modules/jquery/dist/jquery.min.js"></script>
+	<script>
+		window.jQuery = window.$ = require('jquery');
+	</script>
 	<script src="../../node_modules/@popperjs/core/dist/umd/popper.min.js"></script>
-	<script src="../../node_modules/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
+	<script src="../../node_modules/bootstrap/dist/js/bootstrap.min.js"></script>
+
+	<!-- Custom Scripts -->
+	<script>
+		require("../js/account.js");
+
+		let acc = new Account();
+		acc.showProfiles();
+	</script>
 </body>
 
 </html>

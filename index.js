@@ -3,12 +3,17 @@ const path = require("path");
 
 let win;
 
+require('@electron/remote/main').initialize();
+
 function createWindow() {
 	win = new BrowserWindow({
 		width: 800,
 		height: 600,
 		webPreferences: {
-			preload: path.join(__dirname, "preload.js"),
+			// Only true and false because we don't use any remote content on this application
+			enableRemoteModule: true,
+			nodeIntegration: true,
+			contextIsolation: false,
 		},
 	});
 
@@ -16,10 +21,10 @@ function createWindow() {
 	//win.setResizable(false);
 
 	// Set icon of window
-	win.setIcon(path.join(__dirname, 'includes/images/icon.png'));
+	win.setIcon(path.join(__dirname, "includes/images/icon.png"));
 
 	//Loads html template
-	win.loadFile(path.join(__dirname, 'includes/templates/login.html'));
+	win.loadFile(path.join(__dirname, "includes/templates/login.html"));
 
 	//Setting the window to null, when all windows are closed
 	win.on("closed", () => {
@@ -34,7 +39,7 @@ app.whenReady().then(() => {
 	require(path.join(__dirname, "includes/js/keybindings.js"));
 
 	// Creating Tray
-	require(path.join(__dirname, "includes/js/tray.js"))
+	require(path.join(__dirname, "includes/js/tray.js"));
 
 	app.on("activate", () => {
 		if (BrowserWindow.getAllWindows().length === 0) {
