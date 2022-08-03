@@ -3,21 +3,29 @@ const path = require("path");
 const isDev = require("electron-is-dev");
 
 function createWindow() {
+	console.log(__dirname);
+
 	const win = new BrowserWindow({
 		width: 800,
 		height: 600,
+		// Sets the preload script here
 		webPreferences: {
 			preload: path.join(__dirname, 'preload.js'),
 		},
-		icon: path.join(__dirname + './assets/logo.png'),
+		// Sets the icon of the desktop application
+		icon: path.join(__dirname, '../assets/logo.png'),
+		// Disables the view to start
 		show: false
 	});
+	//win.setIcon(path.join(__dirname, '../assets/logo.png'));
 
+	// Loads the react app into the electron app
 	win.loadURL(
 		isDev
 			? "http://localhost:3000"
 			: `file://${path.join(__dirname, "../build/index.html")}`
 	);
+	// Opens the window in full size
 	win.maximize();
 	win.show();
 }
