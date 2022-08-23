@@ -21,7 +21,7 @@
 	"scripts": {
 		"react:start": "react-scripts start",
 		"react:build": "react-scripts build",
-		"electron:serve": "concurrently -k \"npm run start\" \"npm run electron:start\"",
+		"electron:serve": "concurrently -k \"npm run react:start\" \"npm run electron:start\"",
 		"electron:build": "",
 		"electron:start": "wait-on tcp:3000 && electron .",
 		"test": "jest"
