@@ -1,4 +1,4 @@
-const { app, BrowserWindow, ipcMain } = require("electron");
+import { app, BrowserWindow, ipcMain } from "electron";
 const path = require("path");
 const isDev = require("electron-is-dev");
 
